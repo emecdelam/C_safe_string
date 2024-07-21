@@ -21,22 +21,22 @@ typedef struct {
     size_t max_length;
 } safe_string;
 ```
-`void *custom_calloc(size_t size) ` is a function not meant for user usage, I use it because it allows me to return `STRING_MALLOC_FAIL` for strings of length 0
+```cvoid *custom_calloc(size_t size)``` is a function not meant for user usage, I use it because it allows me to return `STRING_MALLOC_FAIL` for strings of length 0
 
-`safe_string *create_string(size_t max_length) ` allocates memory for the structure and returns a pointer or `STRING_MALLOC_FAIL`
+```csafe_string *create_string(size_t max_length)``` allocates memory for the structure and returns a pointer or `STRING_MALLOC_FAIL`
 
-`size_t get_string_size(safe_string *s)` returns the number of char until it finds a 0 or the end of the buffer
+```csize_t get_string_size(safe_string *s)``` returns the number of char until it finds a 0 or the end of the buffer
 
-`int set_string(safe_string *s, const char *str)` returns `STRING_OVERFLOW` if the `str` is too big for the buffer or `STRING_SUCCESS`
+```cint set_string(safe_string *s, const char *str)``` returns `STRING_OVERFLOW` if the `str` is too big for the buffer or `STRING_SUCCESS`
 
-`int append_string(safe_string *s, const char *str)` returns `STRING_OVERFLOW` if the `str` and the data already inside s is too big for the buffer or `STRING_SUCCESS`, it is to note that it uses `get_string_size` to know where to append
+```cint append_string(safe_string *s, const char *str)``` returns `STRING_OVERFLOW` if the `str` and the data already inside s is too big for the buffer or `STRING_SUCCESS`, it is to note that it uses `get_string_size` to know where to append
 
-`void print_string(const safe_string *str, FILE *stream)` prints the string to the stream under the following format : `"{}"\tbuffer length : {}`
+```cvoid print_string(const safe_string *str, FILE *stream)``` prints the string to the stream under the following format : `"{}"\tbuffer length : {}`
 
-`safe_string *initialize_safe_string(const char * str)` easily creates safe string ignoring `malloc` possible fails, the goto option if you are sure that `malloc` won't fail, it also uses `strlen` to determine the size of the buffer to allocate,
+```csafe_string *initialize_safe_string(const char * str)``` easily creates safe string ignoring `malloc` possible fails, the goto option if you are sure that `malloc` won't fail, it also uses `strlen` to determine the size of the buffer to allocate,
 ```c
 initialize_safe_string("Hello");
 ```
 will allocate a buffer of size 5
 
-`void destroy_string(safe_string *s)` completely frees a `safe_string`
+```cvoid destroy_string(safe_string *s)``` completely frees a `safe_string`
