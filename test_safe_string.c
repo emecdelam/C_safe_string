@@ -99,8 +99,5 @@ int main(int argc, char** argv)
     t_addTestToSuite(s_append_string,"Append overflow",test_append_string_fail);
     t_addTestToSuite(s_append_string,"Append string to string",test_append_string);
 
-    safe_string *str = initialize_safe_string("Hello");
-    print_string(str,stdout);
-    destroy_string(str);
     return t_runSuites(argc, argv);
 }
