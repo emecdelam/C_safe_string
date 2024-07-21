@@ -10,7 +10,7 @@ The only unsafe operation is while converting from an unsafe string to a safe st
 
 ## testing
 
-There are some tests made possible by [tunit](https://github.com/tdaron/tunit) big thanks ot the creator
+There are some tests made possible by [tunit](https://github.com/tdaron/tunit) big thanks to the creator
 
 ## docs
 
