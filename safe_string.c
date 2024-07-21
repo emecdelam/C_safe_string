@@ -26,7 +26,7 @@ safe_string *create_string(size_t max_length) {
 }
 size_t get_string_size(safe_string *s){
     size_t size = 0;
-    while (s->buffer[size] != 0 && size < s->max_length){
+    while (s->buffer[size] != (char) 0 && size < s->max_length){
         size++;
     }
     return size;
