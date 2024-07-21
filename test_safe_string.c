@@ -6,7 +6,7 @@
 
 void test_custom_calloc_fail()
 {
-    t_assert_int64((long int) STRING_MALLOC_FAIL, == , (long int)custom_calloc(0));
+    t_assert_void(STRING_MALLOC_FAIL, == ,custom_calloc(0));
 
 }
 void test_custom_calloc_buf()
@@ -17,7 +17,7 @@ void test_custom_calloc_buf()
 void test_create_string_fail()
 {
     safe_string *str = create_string(0);
-    t_assert_int64((long int) STRING_MALLOC_FAIL, == ,(long int)str);
+    t_assert_long_int((long int) STRING_MALLOC_FAIL, == ,(long int)str);
 }
 void test_create_string_128()
 {
