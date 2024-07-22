@@ -33,6 +33,9 @@ size_t get_string_size(safe_string *s){
 }
 
 int set_string(safe_string *s, const char *str) {
+    if (str == NULL){
+        return STRING_INVALID_INPUT;
+    }
     if (strlen(str) > s->max_length){
         return STRING_OVERFLOW;
     }
@@ -44,6 +47,9 @@ int set_string(safe_string *s, const char *str) {
 
 
 int append_string(safe_string *s, const char *str) {
+    if (str == NULL){
+        return STRING_INVALID_INPUT;
+    }
     if (strlen(str) + get_string_size(s) > s->max_length){
         return STRING_OVERFLOW;
     }

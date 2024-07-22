@@ -4,7 +4,7 @@
 #define STRING_MALLOC_FAIL (void *) -1
 #define STRING_OVERFLOW -1
 #define STRING_SUCCESS 0
-
+#define STRING_INVALID_INPUT -2
 
 
 typedef struct {
